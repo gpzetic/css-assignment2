@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Grayson Zetic">
+        <meta name="description" content="Lyrics of Mirrors by Justin Timberlake">
+        <title>Mirrors - Justin Timberlake</title>
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body id="body">
+        <audio id="myAudio" type="audio/mp3" src="video/mirrors.mp4" ></audio>
+        <script src="js/script.js"></script>
+        <button id="button" onclick=firstPlay()>Play</button>
+        <button id="help" onclick=showHelp()>?</button>
+        <canvas id="canvas"></canvas>
+        <div id="container">
+            <div id="lyrDiv">
+                <p id="lyrEl"></p>
+            </div>
+        </div>
+        <input type="range" id="songSlider" min="0" max="100" value="0" step="1">
+    </body>
+</html>

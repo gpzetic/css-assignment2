@@ -1,0 +1,273 @@
+@font-face {
+    font-family: disco;
+    src: url(../fonts/disco.ttf);
+}
+@font-face {
+    font-family: flowers;
+    src: url(../fonts/flowers.ttf);
+}
+@font-face {
+    font-family: bubbles;
+    src: url(../fonts/bubbles.ttf);
+}
+@font-face {
+    font-family: clattering;
+    src: url(../fonts/clattering.ttf);
+}
+
+body {
+    background-color: black;
+    overflow: hidden;
+}
+
+#container {
+    min-width: 100%;
+    align-content: center;
+    perspective: 1000px; 
+}
+
+#help {
+    position: absolute;
+    border: none;
+    padding: 20px;
+    right: 2%;
+    font-size: 4em;
+    font-family: disco;
+    text-shadow: 2px 2px 6px white;
+    background: none;
+    animation: idle 2s infinite alternate-reverse;
+    transition: 0.2s;
+}
+
+#button {
+    border: none;
+    padding: 20px;
+    left: 50%;
+    font-size: 4em;
+    font-family: disco;
+    text-shadow: 2px 2px 6px white;
+    background: none;
+    animation: idle 2s infinite alternate-reverse;
+    transition: 0.2s;
+}
+
+#button:hover {
+    text-shadow: 2px 2px 6px rgb(71, 91, 170);
+}
+
+#help:hover {
+    text-shadow: 2px 2px 6px rgb(71, 91, 170);
+}
+
+input {
+    position: absolute;
+    bottom: 10px;
+    width:100%;
+    margin: 0;
+    left: 0px;
+    outline-color: #95eb5c;
+    height: 2px;
+    background-color: #134569;
+    color: #0e0e0e;
+    appearance: none;
+    border: none;
+}
+
+#lyrEl {
+    color: #000000;
+    position: absolute;
+    text-shadow: 2px 2px 4px #000; 
+    text-align: center; 
+    transition: all 0.5s ease; 
+    font-size: 8em;
+    
+    animation: anim0 1s linear forwards;
+    white-space: nowrap;
+    z-index: -2;
+}
+
+#lyrDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: bubbles;
+    height: 200px; 
+    margin-top: 150px;
+    perspective: 500px;
+}
+
+/* Font classes */
+.clattering {
+    font-family: clattering;
+}
+
+.flowers {
+    font-family: disco;
+}
+
+/* Text effects classes */
+.fancy {
+    animation: fancy 2s infinite alternate-reverse;
+}
+
+.move {
+    perspective: 200px;
+}
+
+.red {
+    text-shadow: rgba(246, 65, 143, 0.703) 1px 0 10px;
+    font-size: 1.2em;
+}
+
+.blue {
+    text-shadow: rgba(65, 159, 246, 0.659) 1px 0 10px; 
+    font-size: 0.9em;
+}
+
+.yellow {
+    text-shadow: #FC0 1px 0 10px;
+}
+
+.green {
+    text-shadow: rgba(52, 183, 56, 0.854) 1px 0 10px;
+}
+
+.big {
+    font-size: 1.2em;
+    font-weight: 100;
+}
+
+.spread {
+    letter-spacing: 8px;
+}
+
+/* Visualizer */
+#canvas {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* Animations */
+@keyframes fancy {
+    0% {
+        text-shadow: 3px 9px 0px rgb(102, 213, 71);
+    }
+    25% {
+        text-shadow: 7px -5px 0px rgb(177, 58, 141);
+    }
+    50% {
+        text-shadow: -3px -9px 0px rgb(52, 189, 202);
+    }
+    75% {
+        text-shadow: 5px 3px 0px rgb(68, 49, 165);
+    }
+    100% {
+        text-shadow: 9px 3px 0px rgb(161, 70, 50);
+    }
+}
+
+@keyframes anim0 {
+    0% {
+        color: rgba(0.2, 0.1, 0.1, 0.7);
+        transform: translateX(50px) translateY(-20px) translateZ(10px) rotateX(20deg) rotateY(5deg);
+        text-shadow: 3px 9px 0px rgb(213, 71, 71);
+    }
+    25% {
+        text-shadow: 7px -5px 0px rgb(177, 135, 58);
+    }
+    50% {
+        text-shadow: -3px -9px 0px rgb(114, 52, 202);
+    }
+    75% {
+        text-shadow: 5px 3px 0px rgb(165, 165, 49);
+    }
+    100% {
+        color: rgba(0.9, 0.1, 0.1, 0.7);
+        font-size: 5em;
+        text-shadow: 9px 3px 0px rgb(50, 50, 161);
+    }
+}
+@keyframes anim1 {
+    0% {
+        color: rgba(0.2, 0.1, 0.1, 0.7);
+        transform: translateX(-50px) translateY(20px) translateZ(10px) rotateX(20deg) rotateY(-5deg);
+        text-shadow: 3px 9px 0px rgb(213, 71, 71);
+    }
+    25% {
+        text-shadow: 7px -5px 0px rgb(177, 135, 58);
+    }
+    50% {
+        text-shadow: -3px -9px 0px rgb(114, 52, 202);
+    }
+    75% {
+        text-shadow: 5px 3px 0px rgb(165, 165, 49);
+    }
+    100% {
+        color: rgba(0.9, 0.1, 0.1, 0.7);
+        font-size: 5em;
+        text-shadow: 9px 3px 0px rgb(50, 50, 161);
+    }
+}
+
+@keyframes anim2 {
+    0% {
+        color: rgba(0.2, 0.1, 0.1, 0.7);
+        transform: translateX(50px) translateY(50px) translateZ(-10px) rotateX(2deg) rotateY(10deg);
+        text-shadow: 3px 9px 0px rgb(213, 71, 71);
+    }
+    25% {
+        text-shadow: 7px -5px 0px rgb(177, 135, 58);
+    }
+    50% {
+        text-shadow: -3px -9px 0px rgb(114, 52, 202);
+    }
+    75% {
+        text-shadow: 5px 3px 0px rgb(165, 165, 49);
+    }
+    100% {
+        color: rgba(0.9, 0.1, 0.1, 0.7);
+        font-size: 5em;
+        text-shadow: 9px 3px 0px rgb(50, 50, 161);
+    }
+}
+
+@keyframes rave {
+    0% {
+        color: #e45959ee;
+    }
+    50% {
+        color: #185375;
+    }
+    100% {
+        color: #5f2d5a;
+    }
+}   
+
+@keyframes slow {
+    0% {
+        color: #59e4b6ee;
+    }
+    50% {
+        color: #073854;
+    }
+    100% {
+        color: #e52ed3;
+    }
+}
+
+@keyframes idle {
+    0% {
+        transform: rotateX(4deg) rotateY(-3deg) rotateZ(5deg);
+    }
+    50% {
+        transform: scaleX(0.9);
+    }
+    100% {
+        transform: rotateX(-4deg) rotateY(3deg) rotateZ(-5deg);
+
+    }
+}
